@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_training/green_screen.dart';
 import 'package:flutter_training/main.dart';
 
 class Home extends StatefulWidget {
