@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/yellow_screen.dart';
 import 'package:flutter_training/providers/weather_api.dart';
+import 'package:flutter_training/yellow_screen.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
 
 late WeatherApi weatherApi;

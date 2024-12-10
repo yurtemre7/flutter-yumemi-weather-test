@@ -10,7 +10,8 @@ class YellowScreen extends StatefulWidget {
   State<YellowScreen> createState() => _YellowScreenState();
 }
 
-class _YellowScreenState extends State<YellowScreen> with WidgetsBindingObserver {
+class _YellowScreenState extends State<YellowScreen>
+    with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
