@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter_training/main.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,6 +11,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String? weatherStatus;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +24,15 @@ class _HomeState extends State<Home> {
               widthFactor: 0.5,
               child: Column(
                 children: [
-                  Placeholder(
-                    fallbackHeight: MediaQuery.of(context).size.width * 0.5,
-                  ),
+                  if (weatherStatus != null)
+                    SvgPicture.asset(
+                      'assets/images/$weatherStatus.svg',
+                      height: MediaQuery.of(context).size.width * 0.5,
+                    )
+                  else
+                    Placeholder(
+                      fallbackHeight: MediaQuery.of(context).size.width * 0.5,
+                    ),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -58,7 +69,13 @@ class _HomeState extends State<Home> {
                   ),
                   TextButton(
                     child: const Text('Reload'),
-                    onPressed: () {},
+                    onPressed: () {
+                      final newStatus = weatherApi.fetchSimpleWeather();
+
+                      setState(() {
+                        weatherStatus = newStatus;
+                      });
+                    },
                   ),
                 ],
               ),
@@ -67,5 +84,11 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('weatherStatus', weatherStatus));
   }
 }
