@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_training/green_screen.dart';
 import 'package:flutter_training/home.dart';
 import 'package:flutter_training/providers/weather_api.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Home(),
+      home: GreenScreen(),
     );
   }
 }
