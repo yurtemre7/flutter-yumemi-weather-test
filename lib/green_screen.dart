@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_training/home.dart';
 
@@ -13,9 +15,11 @@ class _GreenScreenState extends State<GreenScreen> with WidgetsBindingObserver {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.endOfFrame.then((v) async {
-      pushDelayed();
-    });
+    unawaited(
+      WidgetsBinding.instance.endOfFrame.then((v) async {
+        await pushDelayed();
+      }),
+    );
   }
 
   Future<void> pushDelayed() async {
