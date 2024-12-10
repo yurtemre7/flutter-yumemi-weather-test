@@ -6,8 +6,9 @@ import 'package:yumemi_weather/yumemi_weather.dart';
 late WeatherApi weatherApi;
 
 void main() {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
   weatherApi = WeatherApi(YumemiWeather());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
