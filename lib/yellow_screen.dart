@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_training/home.dart';
 
-class GreenScreen extends StatefulWidget {
-  const GreenScreen({super.key});
+class YellowScreen extends StatefulWidget {
+  const YellowScreen({super.key});
 
   @override
-  State<GreenScreen> createState() => _GreenScreenState();
+  State<YellowScreen> createState() => _YellowScreenState();
 }
 
-class _GreenScreenState extends State<GreenScreen> with WidgetsBindingObserver {
+class _YellowScreenState extends State<YellowScreen> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
